@@ -1,18 +1,11 @@
 import os
-from langchain import BasePromptTemplate
 
-import numpy as np
-import pandas as pd
 import streamlit as st
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain.chains import ConversationalRetrievalChain
+from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.memory import ConversationBufferMemory
-from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.vectorstores import Chroma
-from langchain.callbacks.streamlit import StreamlitCallbackHandler
-from langchain.chains import RetrievalQA
 
 openai_api_key = os.environ['OPENAI_KEY']
 
